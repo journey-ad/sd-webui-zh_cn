@@ -1,5 +1,14 @@
 [English Version](README.md)
 
+# 关于这个mod
+修复了[issues#51](https://github.com/journey-ad/sd-webui-bilingual-localization/issues/51)(无法显示翻译)这个bug，作者已经8个月没有更新了(24年4月6日)，所以我只好自己修改，并且增加一些舒适性优化改动。 
+
+为了更好的学习英语，增加舒适性改动：  
+1. 调整界面中上下位置的语言的主次关系，增加层次感（学英文就请把英文设置到上方位置）  
+2. 增加输入框的默认占位文字是否需要翻译的选项（因为在舒服框做翻译，界面会不太好看）  
+
+----
+
 <p align="center"><img src="https://count.getloli.com/get/@sd-webui-bilingual-localization.github" alt="sd-webui-bilingual-localization"></p>
 
 # sd-webui-bilingual-localization

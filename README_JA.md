@@ -1,5 +1,12 @@
 [English Version](README.md)
 
+# このモッドについて
+[issues#51](https://github.com/journey-ad/sd-webui-bilingual-localization/issues/51)番のバグ（翻訳表示の問題）が修正されました。著者は8ヶ月間更新されていないため（2024年4月6日時点）、私は独自に修正し、さらにいくつかの快適性の最適化調整を行いました。
+
+より良い英語学習のため、快適性を向上させます：
+1. インターフェースの上下位置の言語の優先関係を調整し、階層感を高めます（英語を学習する場合は、英語を上位に設定してください）。
+2. 入力ボックスのデフォルトのプレースホルダーテキストを翻訳する必要があるかどうかのオプションを追加します（入力ボックス内での翻訳は、インターフェースの美観に影響を及ぼす可能性があるため）。
+
 <p align="center"><img src="https://count.getloli.com/get/@sd-webui-bilingual-localization.github" alt="sd-webui-bilingual-localization"></p>
 
 # sd-webui-bilingual-localization
