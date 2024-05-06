@@ -217,6 +217,11 @@
     '#txt2img_styles, #img2txt_styles', // styles select
     '.extra-network-cards .card .actions .name', // extra network cards name
     'script, style, svg, g, path', // script / style / svg elements
+    'svg *, canvas, canvas *',
+    '#txt2img_prompt_container, #img2img_prompt_container, .physton-prompt',
+    '#txt2img_prompt_container *, #img2img_prompt_container *, .physton-prompt *',
+    '.progressDiv, .progress, .progress-text',
+    '.progressDiv *, .progress *, .progress-text *',
   ]
   // Translate element
   function translateEl(el, { deep = false, rich = false } = {}) {
