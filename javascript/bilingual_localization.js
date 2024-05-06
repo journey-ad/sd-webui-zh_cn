@@ -297,14 +297,14 @@
       [source, translation] = [translation, source]
     }
 
+    const isTranslationIncludeSource = translation.startsWith(source);
+
     switch (type) {
       case 'text':
         el.textContent = translation
         break;
 
       case 'element':
-        const hasChildNodes = el.hasChildNodes();
-        const isTranslationIncludeSource = translation.startsWith(source);
 
         if (isTranslationIncludeSource) {
           if (el.nodeType === 3) {
@@ -316,7 +316,7 @@
         }
 
         const htmlEl = parseHtmlStringToElement(`<div class="bilingual__trans_wrapper">${htmlEncode(translation)}<em>${htmlEncode(source)}</em></div>`)
-        if (hasChildNodes) {
+        if (el.hasChildNodes()) {
           const textNode = Array.from(el.childNodes).find(node =>
             node.nodeName === '#text' &&
             (node.textContent.trim() === source || node.textContent.trim() === '__biligual__will_be_replaced__')
@@ -335,15 +335,15 @@
         break;
 
       case 'option':
-        el.textContent = `${translation} (${source})`
+        el.textContent = isTranslationIncludeSource ? translation : `${translation} (${source})`
         break;
 
       case 'title':
-        el.title = `${translation}\n${source}`
+        el.title = isTranslationIncludeSource ? translation : `${translation}\n${source}`
         break;
 
       case 'placeholder':
-        el.placeholder = `${translation}\n\n${source}`
+        el.placeholder = isTranslationIncludeSource ? translation : `${translation}\n\n${source}`
         break;
 
       default:
