@@ -303,9 +303,20 @@
         break;
 
       case 'element':
-        const htmlStr = `<div class="bilingual__trans_wrapper">${htmlEncode(translation)}<em>${htmlEncode(source)}</em></div>`
-        const htmlEl = parseHtmlStringToElement(htmlStr)
-        if (el.hasChildNodes()) {
+        const hasChildNodes = el.hasChildNodes();
+        const isTranslationIncludeSource = translation.startsWith(source);
+
+        if (isTranslationIncludeSource) {
+          if (el.nodeType === 3) {
+            el.nodeValue = translation;
+          } else if (htmlEncode(el.textContent) === el.innerHTML) {
+            el.innerHTML = htmlEncode(translation)
+          }
+          break;
+        }
+
+        const htmlEl = parseHtmlStringToElement(`<div class="bilingual__trans_wrapper">${htmlEncode(translation)}<em>${htmlEncode(source)}</em></div>`)
+        if (hasChildNodes) {
           const textNode = Array.from(el.childNodes).find(node =>
             node.nodeName === '#text' &&
             (node.textContent.trim() === source || node.textContent.trim() === '__biligual__will_be_replaced__')
