@@ -1,5 +1,13 @@
 [中文文档](README_ZH.md) / [日本語](README_JA.md)
 
+# About this mod
+Resolved bug [issues#51](https://github.com/journey-ad/sd-webui-bilingual-localization/issues/51) (translation display issue), as the author has not updated for 8 months (as of April 6, 2024), so I had to make modifications independently, and additionally introduced some comfort optimization adjustments.   
+
+For better English learning, improve comfort by:
+1. Adjusting the priority relationship between languages in the upper and lower positions of the interface to enhance hierarchy (for learning English, please set English to the upper position) 
+2. Adding an option to translate the default placeholder text in the inputbox (because translating within the inputbox may affect the interface aesthetics)
+----
+
 <p align="center"><img src="https://count.getloli.com/get/@sd-webui-bilingual-localization.github" alt="sd-webui-bilingual-localization"></p>
 
 # sd-webui-bilingual-localization

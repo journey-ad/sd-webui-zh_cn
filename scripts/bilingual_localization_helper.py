@@ -53,7 +53,11 @@ def on_ui_settings():
     # translation order
     shared.opts.add_option("bilingual_localization_order", shared.OptionInfo("Translation First", "Translation display order", gr.Radio, {"choices": ["Translation First", "Original First"]}, section=BL_SECTION))
 
+    # translate the inputbox's placeholder
+    shared.opts.add_option("bilingual_translate_placeholder", shared.OptionInfo(False, "Enable translate the inputbox's placeholder", section=BL_SECTION))
+
     # all localization files path in hidden option
     shared.opts.add_option("bilingual_localization_dirs", shared.OptionInfo(json.dumps(I18N_DIRS), "Localization dirs", section=BL_SECTION, component_args={"visible": False}))
+    shared.opts.data["bilingual_localization_dirs"] = json.dumps(I18N_DIRS)
 
 script_callbacks.on_ui_settings(on_ui_settings)

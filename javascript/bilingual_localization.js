@@ -4,12 +4,15 @@
       display: inline-flex;
       flex-direction: column;
       align-items: center;
-      font-size: 13px;
+      font-size: var(--section-header-text-size);
       line-height: 1;
     }
     
     .bilingual__trans_wrapper em {
       font-style: normal;
+      font-size: 10px;
+      padding-top: 4px;
+      margin-bottom: 8px;
     }
 
     #txtimg_hr_finalres .bilingual__trans_wrapper em,
@@ -40,7 +43,6 @@
     .posex_setting_cont .bilingual__trans_wrapper:not(.posex_bg .bilingual__trans_wrapper), /* Posex extension */
     #dynamic-prompting .bilingual__trans_wrapper
     {
-      font-size: 12px;
       align-items: flex-start;
     }
 
@@ -103,7 +105,8 @@
       file: opts["bilingual_localization_file"],
       dirs: opts["bilingual_localization_dirs"],
       order: opts["bilingual_localization_order"],
-      enableLogger: opts["bilingual_localization_logger"]
+      enableLogger: opts["bilingual_localization_logger"],
+      enableTransPlaceHolder: opts["bilingual_translate_placeholder"]
     }
 
     let { enabled, file, dirs, enableLogger } = config
@@ -227,7 +230,7 @@
       doTranslate(el, el.title, 'title')
     }
 
-    if (el.placeholder) {
+    if (el.placeholder && config.enableTransPlaceHolder === true) {
       doTranslate(el, el.placeholder, 'placeholder')
     }
 
