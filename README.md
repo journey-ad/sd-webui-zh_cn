@@ -1,11 +1,16 @@
-[中文文档](README_ZH.md) / [日本語](README_JA.md)
-
 <p align="center"><img src="https://count.getloli.com/get/@sd-webui-bilingual-localization.github" alt="sd-webui-bilingual-localization"></p>
 
 # sd-webui-bilingual-localization
 [Stable Diffusion web UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui) bilingual localization extensions.
 
 ![Snipaste_2023-03-30_01-05-45](https://user-images.githubusercontent.com/16256221/228617304-3107244b-ce13-4b96-b665-1d13090d24a7.png)
+
+## Build
+
+```bash
+bun build ./src/main.ts --outfile ./javascript/bilingual_localization.js --minify
+```
+
 
 ## Features
 - Bilingual translation, no need to worry about how to find the original button.
